@@ -3,8 +3,12 @@ import Header from '../_components/header'
 import { format } from 'date-fns'
 import Search from './_components/search'
 import BookingItem from '../_components/booking-item'
+import BarberShopItem from './_components/barbershop-item'
+import { db } from '../_lib/prisma'
 
-const Home = () => {
+export default async function Home() {
+  const barbershops = await db.barbershop.findMany()
+
   return (
     <div>
       <Header />
@@ -28,8 +32,17 @@ const Home = () => {
         </h2>
         <BookingItem />
       </div>
+
+      <div className="mt-6">
+        <h2 className="mb-3 px-5 text-xs font-bold uppercase text-gray-400">
+          Recomendados
+        </h2>
+        <div className="flex gap-4 overflow-x-auto px-5 [&::-webkit-scrollbar]:hidden">
+          {barbershops.map((barbershop) => (
+            <BarberShopItem key={barbershop.id} barbershop={barbershop} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
-
-export default Home
