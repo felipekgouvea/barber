@@ -1,60 +1,31 @@
-'use client'
-
 import { Button } from '@/app/_components/ui/button'
-import { Barbershop } from '@prisma/client'
-import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from 'lucide-react'
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import { Smartphone } from 'lucide-react'
 
-interface BarberShopInfoProps {
-  barbershop: Barbershop
-}
-
-const BarberShopInfo = ({ barbershop }: BarberShopInfoProps) => {
-  const router = useRouter()
-
-  const handleBackClick = () => {
-    router.back()
-  }
-
+const BarberShopInfo = () => {
   return (
     <div>
-      <div className="relative h-[250px] w-full">
-        <Button
-          size="icon"
-          variant="outline"
-          className="absolute left-4 top-4 z-50"
-          onClick={handleBackClick}
-        >
-          <ChevronLeftIcon />
-        </Button>
-        <Button
-          size="icon"
-          variant="outline"
-          className="absolute right-4 top-4 z-50"
-        >
-          <MenuIcon />
-        </Button>
-        <Image
-          src={barbershop.imageUrl}
-          fill
-          alt={barbershop.name}
-          style={{ objectFit: 'cover' }}
-          className="opacity-75"
-        />
+      <div>
+        <h2>Sobre Nós</h2>
+        <p>
+          Bem-vindo à Vintage Barber, onde tradição encontra estilo. Nossa
+          equipe de mestres barbeiros transforma cortes de cabelo e barbas em
+          obras de arte. Em um ambiente acolhedor, promovemos confiança, estilo
+          e uma comunidade unida.
+        </p>
       </div>
-
-      <div className="border-secondary border-b border-solid px-5 pb-6 pt-3">
-        <h1 className=" text-xl font-bold">{barbershop.name}</h1>
-
-        <div className="item-center mt-2 flex gap-1">
-          <MapPinIcon className="text-primary" size={18} />
-          <p className="text-sm font-light">{barbershop.address}</p>
+      <div>
+        <Smartphone />
+        <p>(27) 9.9999-9999</p>
+        <Button>Copiar</Button>
+      </div>
+      <div>
+        <div>
+          <p>Segunda-Feira</p>
+          <p>Fechado</p>
         </div>
-
-        <div className="item-center mt-2 flex gap-1">
-          <StarIcon className="text-primary fill-primary" size={18} />
-          <p className="text-sm font-light">5,0 (899 avaliações)</p>
+        <div>
+          <p>Terça-Feira</p>
+          <p>09:00 - 21:00</p>
         </div>
       </div>
     </div>
