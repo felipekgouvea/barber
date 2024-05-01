@@ -8,6 +8,8 @@ import {
 } from '@/app/_components/ui/tabs'
 import BarberShopHeader from './_components/barbershop-header'
 import BarberShopInfo from './_components/barbershop-info'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
 interface BarberShopDetailsPageProps {
   params: {
@@ -18,6 +20,8 @@ interface BarberShopDetailsPageProps {
 const BarberShopDetailsPage = async ({
   params,
 }: BarberShopDetailsPageProps) => {
+  const session = await getServerSession(authOptions)
+
   if (!params.id) {
     return null
   }
@@ -58,7 +62,11 @@ const BarberShopDetailsPage = async ({
           <TabsContent value="services">
             <div className="mt-6 flex flex-col gap-4">
               {barbershop.services.map((service) => (
-                <ServiceItem service={service} key={service.id} />
+                <ServiceItem
+                  service={service}
+                  key={service.id}
+                  isAuthenticated={!!session?.user}
+                />
               ))}
             </div>
           </TabsContent>
