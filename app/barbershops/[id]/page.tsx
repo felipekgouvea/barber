@@ -40,8 +40,8 @@ const BarberShopDetailsPage = async ({
       <BarberShopHeader barbershop={barbershop} />
 
       <div className="px-5 py-6">
-        <Tabs defaultValue="services" className="">
-          <TabsList className="mb-10 grid w-[250px] grid-cols-2 bg-transparent">
+        <Tabs defaultValue="services">
+          <TabsList className="mb-10 grid w-[250px] grid-cols-2 bg-transparent px-0">
             <TabsTrigger
               className="w-24 rounded-xl border border-solid border-[#26272B] px-12 py-4 text-white data-[state=active]:bg-purple-900"
               value="services"
@@ -62,7 +62,7 @@ const BarberShopDetailsPage = async ({
               ))}
             </div>
           </TabsContent>
-          <TabsContent value="infos" className="h-screen">
+          <TabsContent value="infos">
             <BarberShopInfo />
           </TabsContent>
         </Tabs>
