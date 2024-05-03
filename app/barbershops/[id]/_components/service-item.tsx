@@ -1,5 +1,15 @@
 'use client'
 
+import { Barbershop, Booking, Service } from '@prisma/client'
+import { format, setHours, setMinutes } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+import { Loader2 } from 'lucide-react'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { signIn, useSession } from 'next-auth/react'
+import { useEffect, useMemo, useState } from 'react'
+import { toast } from 'sonner'
+
 import { Button } from '@/app/_components/ui/button'
 import { Calendar } from '@/app/_components/ui/calendar'
 import { Card, CardContent } from '@/app/_components/ui/card'
@@ -11,18 +21,9 @@ import {
   SheetTrigger,
 } from '@/app/_components/ui/sheet'
 
-import { Barbershop, Booking, Service } from '@prisma/client'
-import { ptBR } from 'date-fns/locale'
-import { signIn, useSession } from 'next-auth/react'
-import Image from 'next/image'
-import { useEffect, useMemo, useState } from 'react'
-import { generateDayTimeList } from '../_helpers/hours'
-import { format, setHours, setMinutes } from 'date-fns'
-import { saveBooking } from '../_actions/save-booking'
-import { Loader2 } from 'lucide-react'
-import { toast } from 'sonner'
-import { useRouter } from 'next/navigation'
 import { getDayBookings } from '../_actions/get-day-bookings'
+import { saveBooking } from '../_actions/save-booking'
+import { generateDayTimeList } from '../_helpers/hours'
 
 interface ServiceitemProps {
   service: Service

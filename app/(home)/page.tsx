@@ -1,10 +1,11 @@
-import { ptBR } from 'date-fns/locale'
-import Header from '../_components/header'
 import { format } from 'date-fns'
-import Search from './_components/search'
+import { ptBR } from 'date-fns/locale'
+
 import BookingItem from '../_components/booking-item'
-import BarberShopItem from './_components/barbershop-item'
+import Header from '../_components/header'
 import { db } from '../_lib/prisma'
+import BarberShopItem from './_components/barbershop-item'
+import Search from './_components/search'
 
 export default async function Home() {
   const barbershops = await db.barbershop.findMany()
@@ -26,12 +27,12 @@ export default async function Home() {
         <Search />
       </div>
 
-      <div className="px-5 pt-6">
+      {/* <div className="px-5 pt-6">
         <h2 className="mb-3 text-xs font-bold uppercase text-gray-400">
           Agendamentos
         </h2>
-        <BookingItem />
-      </div>
+        <BookingItem booking={} />
+      </div> */}
 
       <div className="mt-6">
         <h2 className="mb-3 px-5 text-xs font-bold uppercase text-gray-400">

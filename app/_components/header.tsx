@@ -1,8 +1,11 @@
 'use client'
 
+import { MenuIcon } from 'lucide-react'
 import Image from 'next/image'
-import { Card, CardContent } from './ui/card'
+
+import SideMenu from './side-menu'
 import { Button } from './ui/button'
+import { Card, CardContent } from './ui/card'
 import {
   Sheet,
   SheetContent,
@@ -10,8 +13,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from './ui/sheet'
-import { MenuIcon } from 'lucide-react'
-import SideMenu from './side-menu'
 
 const Header = () => {
   return (
@@ -26,7 +27,7 @@ const Header = () => {
           </SheetTrigger>
 
           <SheetContent className="p-0">
-            <SheetHeader className="border-secondary border-b border-solid p-5 text-left">
+            <SheetHeader className="border-b border-solid border-secondary p-5 text-left">
               <SheetTitle>Menu</SheetTitle>
             </SheetHeader>
             <SideMenu />

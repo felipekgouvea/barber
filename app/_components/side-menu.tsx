@@ -7,10 +7,11 @@ import {
   LogOutIcon,
   UserIcon,
 } from 'lucide-react'
-import { Avatar, AvatarImage } from './ui/avatar'
-import { Button } from './ui/button'
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
+
+import { Avatar, AvatarImage } from './ui/avatar'
+import { Button } from './ui/button'
 
 const SideMenu = () => {
   const { data } = useSession()

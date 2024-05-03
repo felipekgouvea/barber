@@ -1,10 +1,11 @@
-import { Button } from '@/app/_components/ui/button'
 import { Smartphone } from 'lucide-react'
+
+import { Button } from '@/app/_components/ui/button'
 
 const BarberShopInfo = () => {
   return (
     <div>
-      <div className="border-secondary border-b border-solid ">
+      <div className="border-b border-solid border-secondary ">
         <h2 className="text-xs uppercase text-gray-300">Sobre Nós</h2>
         <p className="mb-12 mt-4 text-justify text-sm leading-6 text-white">
           Bem-vindo à Vintage Barber, onde tradição encontra estilo. Nossa
@@ -14,7 +15,7 @@ const BarberShopInfo = () => {
         </p>
       </div>
 
-      <div className="border-secondary flex flex-col gap-4 border-b border-solid py-8 ">
+      <div className="flex flex-col gap-4 border-b border-solid border-secondary py-8 ">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Smartphone size={24} />
