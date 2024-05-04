@@ -6,8 +6,8 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/app/_components/ui/tabs'
+import { authOptions } from '@/app/_lib/auth'
 import { db } from '@/app/_lib/prisma'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
 import BarberShopHeader from './_components/barbershop-header'
 import BarberShopInfo from './_components/barbershop-info'
