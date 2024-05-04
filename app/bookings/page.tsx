@@ -21,6 +21,11 @@ const BookingsPage = async () => {
           gte: new Date(),
         },
       },
+      orderBy: [
+        {
+          date: 'asc',
+        },
+      ],
       include: {
         service: true,
         barbershop: true,
