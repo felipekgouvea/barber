@@ -2,6 +2,7 @@
 
 import { MenuIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import SideMenu from './side-menu'
 import { Button } from './ui/button'
@@ -18,7 +19,9 @@ const Header = () => {
   return (
     <Card>
       <CardContent className="flex items-center justify-between px-5 py-8">
-        <Image src="/logo.png" alt="FWS Barber" width={120} height={22} />
+        <Link href="/">
+          <Image src="/logo.png" alt="FWS Barber" width={120} height={22} />
+        </Link>
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="h-8 w-8">
