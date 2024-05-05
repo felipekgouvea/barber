@@ -2,11 +2,5 @@
   "extends": [
     "@rocketseat/eslint-config/next",
     "next/core-web-vitals"
-  ],
-  "plugins": ["simple-import-sort"],
-  "rules": {
-    "simple-import-sort/imports": "error",
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off"
-  }
+  ]
 }

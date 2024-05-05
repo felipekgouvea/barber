@@ -10,8 +10,8 @@ import {
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
-import { Avatar, AvatarImage } from './ui/avatar'
 import { Button } from './ui/button'
+import { Avatar, AvatarImage } from './ui/avatar'
 
 const SideMenu = () => {
   const { data } = useSession()
