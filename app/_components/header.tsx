@@ -31,7 +31,7 @@ const Header = () => {
 
           <SheetContent className="p-0">
             <SheetHeader className="border-b border-solid border-secondary p-5 text-left">
-              <SheetTitle>Menu</SheetTitle>
+              <SheetTitle>Menu2</SheetTitle>
             </SheetHeader>
             <SideMenu />
           </SheetContent>
