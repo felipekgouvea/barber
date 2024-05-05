@@ -1,4 +1,5 @@
 import BarberShopItem from "../(home)/_components/barbershop-item";
+import Search from "../(home)/_components/search";
 import Header from "../_components/header";
 import { db } from "../_lib/prisma";
 
@@ -21,7 +22,13 @@ const BarbershopPage = async ({searchParams}:BarberShopPageProps) => {
   return ( 
     <>
       <Header/>
-      <div className="px-5 py-6">
+
+
+      <div className="px-5 py-6 flex flex-col gap-6">
+        <Search defaultValues={{
+          search: searchParams.search,
+        }}/>
+
         <h1 className="text-gray-400 font-bold text-xs uppercase">Resultados para {searchParams.search}</h1>
 
         {barbershops.length > 0 ? (

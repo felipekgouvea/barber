@@ -17,13 +17,18 @@ const createFormSchema = z.object({
   }).trim().min(1, "Campo obrigatório."),
 })
 
+interface SearchProps{
+  defaultValues?: z.infer<typeof createFormSchema>
+}
+
 type CreateFormSchema = z.infer<typeof createFormSchema>
 
-const Search = () => {
+const Search = ({defaultValues}:SearchProps) => {
   const router = useRouter()
 
   const form = useForm<CreateFormSchema>({
-    resolver: zodResolver(createFormSchema)
+    resolver: zodResolver(createFormSchema),
+    defaultValues
   })
 
   const handleSubmint = (data:CreateFormSchema) => {
