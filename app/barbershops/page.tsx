@@ -39,7 +39,7 @@ const BarbershopPage = async ({searchParams}:BarberShopPageProps) => {
               </div>
             ))}
         </div>) : (
-          <div className="text-gray-400 font-bold text-lg uppercase flex justify-center mt-20">
+          <div className="text-gray-400 font-bold text-lg uppercase flex text-center justify-center mt-20">
             <h1>Nenhum resultado encontrado para essa busca!</h1>
           </div>
         )}
