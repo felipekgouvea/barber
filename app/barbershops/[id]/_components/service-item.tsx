@@ -1,7 +1,7 @@
 'use client'
 
 import { Barbershop, Booking, Service } from '@prisma/client'
-import { format, setHours, setMinutes } from 'date-fns'
+import { addDays, format, setHours, setMinutes } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Loader2 } from 'lucide-react'
 import Image from 'next/image'
@@ -176,7 +176,7 @@ const ServiceItem = ({
                       locale={ptBR}
                       selected={date}
                       onSelect={handleDateClick}
-                      fromDate={new Date()}
+                      fromDate={addDays(new Date(), 1)}
                       styles={{
                         head_cell: {
                           width: '100%',
